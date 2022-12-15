@@ -14,7 +14,7 @@ function Home() {
   return (
     <>
     <BackToTopButton />
-      <section id="top" ><VideoSection /></section>
+      <section id="top"  name="top" ><VideoSection /></section>
       <section id="research" name="research" className='containerpaddings2'><ResearchSection /></section>
       <section id="labmembers" name="labmembers" className='containerpaddings'><LabmembersSection /></section>
       <section id="projects" name="projects" className='containerpaddings'><ProjectsSction /></section>
