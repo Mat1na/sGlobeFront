@@ -7,7 +7,12 @@ import { HashLink as Link } from 'react-router-hash-link'
 
 
 function LabmembersSection({ scrollPosition }) {
-
+  const [deviceSize, changeDeviceSize] = useState(window.innerWidth)
+  useEffect(() => {
+      const resizeW = () => changeDeviceSize(window.innerWidth);
+          window.addEventListener("resize", resizeW); // Update the width on resize
+          return () => window.removeEventListener("resize", resizeW);
+    });
   const { ref: myLab1, inView: myLab1IsVisible } = useInView({ triggerOnce: true })
   const { ref: myLab2, inView: myLab2IsVisible } = useInView({ triggerOnce: true })
   const { ref: myLab3, inView: myLab3IsVisible } = useInView({ triggerOnce: true })
@@ -23,15 +28,29 @@ function LabmembersSection({ scrollPosition }) {
     var sorted = data.sort((a, b) => sortOrder.indexOf(a.functionbasic
     ) - sortOrder.indexOf(b.functionbasic
     ));
+    if (deviceSize>991 && deviceSize<1400){
     let sortedFirst=data.slice(0,7)
     let sortedRest=data.slice(7)
-    console.log(sortedFirst);
     setLabmemberList(sortedFirst);
     setmembersExtra(sortedRest);
+  }
+    else if (deviceSize>1399){
+      let sortedFirst=data.slice(0,9)
+    let sortedRest=data.slice(9)
+    setLabmemberList(sortedFirst);
+    setmembersExtra(sortedRest);
+    }
+    else {
+    let sortedFirst=data.slice(0,6)
+    let sortedRest=data.slice(6)
+    setLabmemberList(sortedFirst);
+    setmembersExtra(sortedRest);
+    }
+    
   };
   useEffect(() => {
     fetchLabmembers();
-  }, []);
+  }, [deviceSize]);
 
 
 
@@ -150,7 +169,7 @@ function LabmembersSection({ scrollPosition }) {
   </Col>):("")
           ) : ("")
         })}
-<Col  md={12}>{show ? (<Link to="/#labmembers" className={`pt-5 buttonpadding `}><Badge onClick={() => setShow(false)} className={` badge-icon montserrat `}>Show less</Badge></Link>) : (<Badge onClick={() => setShow(true)} className={` badge-icon montserrat more-projects `}>View all labmembers</Badge>)}</Col>
+<Col  md={12}>{show ? (<Link to="/#labmembers" className={`pt-5 buttonpadding `}><Badge onClick={() => setShow(false)} className={` badge-icon montserrat `}>Show less</Badge></Link>) : (<Badge onClick={() => setShow(true)} className={` badge-icon montserrat more-projects `}>View all lab members</Badge>)}</Col>
 
         {/* Alumni Section*/}
         <Link to={"/alumni"} className="pt-5 buttonpadding"><h3 className={`d-flex divslide-before  ${myLab4IsVisible ? "divslide" : ""} `} ref={myLab4}><Badge className="badge-icon montserrat">SEE ALUMNI <FaArrowCircleRight className="arrow-icon" /></Badge></h3></Link>
