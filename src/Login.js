@@ -22,7 +22,7 @@ export const Login = () => {
     const user = input.user
     console.log(input)
     auth.login(user);
-    fetch("http://localhost:3001/login", {
+    fetch("https://sglobe-server.onrender.com/login", {
       method: "POST",
       headers: {
         Accept: "application/json",

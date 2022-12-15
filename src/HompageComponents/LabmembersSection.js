@@ -18,7 +18,7 @@ function LabmembersSection({ scrollPosition }) {
   const [labmemberList, setLabmemberList] = useState([]);
   const fetchLabmembers = async () => {
     var sortOrder = ["Assistant Professor", "Postdoc", "PhD student", "visiting PhD student", "Master student"];
-    let res = await fetch("http://localhost:3001/labmembers/fetch-labmembers");
+    let res = await fetch("https://sglobe-server.onrender.com/labmembers/fetch-labmembers");
     let data = await res.json();
     setLabmemberList(data);
     var sorted = data.sort((a, b) => sortOrder.indexOf(a.functionbasic

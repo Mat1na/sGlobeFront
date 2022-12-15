@@ -12,7 +12,7 @@ function ProjectsSction() {
 
 
   const fetchProjectList = async () => {
-    let res = await fetch("http://localhost:3001/projects/fetch-projects");
+    let res = await fetch("https://sglobe-server.onrender.com/projects/fetch-projects");
     let data = await res.json();
     setProjects(data);
   };

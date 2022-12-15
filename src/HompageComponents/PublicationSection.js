@@ -15,7 +15,7 @@ function PublicationSection() {
 
 
   const fetchLastPublications = async () => {
-    let res = await fetch("http://localhost:3001/publications/fetch-publications");
+    let res = await fetch("https://sglobe-server.onrender.com/publications/fetch-publications");
     let data = await res.json();
     let filtereddata = data.slice(-7)
     setLastPublications(filtereddata)

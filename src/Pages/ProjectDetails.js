@@ -14,7 +14,7 @@ function ProjectDetails({ width, height, src, alt, ...rest }) {
   const [project, setProject] = useState([]);
   const [researchersList, setResearchersList] = useState([]);
   const fetchProject = async () => {
-    let res = await fetch("http://localhost:3001/projects/fetch-projects");
+    let res = await fetch("https://sglobe-server.onrender.com/projects/fetch-projects");
     let data = await res.json();
     let projectParam = proj.split("-").toString();
     if (res.ok) {
