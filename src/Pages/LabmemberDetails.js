@@ -44,9 +44,7 @@ function LabmemberDetails() {
                   className="member-details"
                   alt={member.membername}
                 />
-              ) : (
-                " "
-              )}
+              ) : ("")}
        
           </div>
           <div className="d-block text-center">
