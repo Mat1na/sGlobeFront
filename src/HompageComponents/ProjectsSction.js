@@ -17,6 +17,7 @@ function ProjectsSction() {
     let data = await res.json();
 
     setProjects(data.slice(2));
+    console.log(projects)
   };
   useEffect(() => {
     fetchProjectList();
@@ -24,7 +25,7 @@ function ProjectsSction() {
 
 
   return (
-      <Container fluid className='mt-0 mb-0'>
+      <Container fluid className='mt-0 mb-0'>{}
         <h1 className={` proj-section-title montserrat pb-4 divslide-before ${myProjIsVisible ? "divslide" : ""}`} ref={myProj}>Research projects</h1>
         <div className="d-flex flex-wrap justify-content-center">
           <Row ref={myProj2}>
