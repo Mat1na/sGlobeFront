@@ -7,6 +7,7 @@ import LazyLoad from 'react-lazyload';
 
 function ProjectsSction() {
   const [projects, setProjects] = useState([]);
+  const [projectsExtra, setProjectsExtra] = useState([]);
   const { ref: myProj, inView: myProjIsVisible } = useInView({ triggerOnce: true })
   const { ref: myProj2, inView: myProj2IsVisible } = useInView({ triggerOnce: true })
 
@@ -14,7 +15,8 @@ function ProjectsSction() {
   const fetchProjectList = async () => {
     let res = await fetch("https://sglobe-server.onrender.com/projects/fetch-projects");
     let data = await res.json();
-    setProjects(data);
+
+    setProjects(data.slice(2));
   };
   useEffect(() => {
     fetchProjectList();
