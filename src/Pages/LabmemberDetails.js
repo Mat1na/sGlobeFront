@@ -37,11 +37,17 @@ function LabmemberDetails() {
       <Container fluid className='details'>
         <div className="member-container">
           <div className="member-details pt-5">
-            <img
-              src={`${member.image}`}
-              className="member-details"
-              alt={member.membername}
-            />
+          {member.image !== undefined &&
+                member.image!== "" ? (
+                  <img
+                  src={`${member.image}`}
+                  className="member-details"
+                  alt={member.membername}
+                />
+              ) : (
+                " "
+              )}
+       
           </div>
           <div className="d-block text-center">
             <h1 className="pt-3 montserrat">{member.membername}</h1>
