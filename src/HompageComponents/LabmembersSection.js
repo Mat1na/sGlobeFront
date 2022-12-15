@@ -24,7 +24,7 @@ function LabmembersSection({ scrollPosition }) {
     var sortOrder = ["Assistant Professor", "Postdoc", "PhD student", "visiting PhD student", "Master student"];
     let res = await fetch("https://sglobe-server.onrender.com/labmembers/fetch-labmembers");
     let data = await res.json();
-  
+    // eslint-disable-next-line 
     var sorted = data.sort((a, b) => sortOrder.indexOf(a.functionbasic
     ) - sortOrder.indexOf(b.functionbasic
     ));
@@ -50,6 +50,7 @@ function LabmembersSection({ scrollPosition }) {
   };
   useEffect(() => {
     fetchLabmembers();
+    // eslint-disable-next-line 
   }, [deviceSize]);
 
 

@@ -314,7 +314,7 @@ td {
       width: 100%;
       height: 250px;
       overflow: hidden;
-     
+
    }
 }
 
@@ -783,7 +783,7 @@ td {
    left: 0;
    width: 100%;
    height: 100%;
-    color: white;
+   color: white;
    background: linear-gradient(0deg, rgba(25, 46, 47, 0.8) 0%, rgba(123, 169, 169, 0.5) 100%);
    filter: contrast(2);
    filter: saturate(2);
@@ -836,7 +836,7 @@ td {
    font-size: 1.2rem;
 }
 
-.publicationdetaillink{
+.publicationdetaillink {
    font-weight: 600;
 }
 
@@ -982,6 +982,7 @@ td {
 .alumni-link:hover {
    color: var(--Dark3);
 }
+
 .badge-icon {
    background-color: var(--Light2) !important;
    color: var(--Dark4);
@@ -996,7 +997,7 @@ td {
 
 /* Project section */
 
-.more-projects{
+.more-projects {
    cursor: pointer;
 }
 
@@ -1112,8 +1113,8 @@ td {
 
 
 
- 
- /* .lazy-load-image-background {
+
+/* .lazy-load-image-background {
    opacity: 0;
  }
  
@@ -1135,7 +1136,7 @@ td {
    overflow: hidden;
    border-radius: 5%;
    margin: 10px;
-   
+
 }
 
 .project-photo-overlay {
@@ -1404,7 +1405,7 @@ figcaption {
 
 @media screen and (min-width:1440px) {
    .join-title1:after {
-      width:31rem;
+      width: 31rem;
    }
 
 
@@ -1418,9 +1419,10 @@ figcaption {
    }
 
 }
+
 @media screen and (min-width:2554px) {
    .join-title1:after {
-      width:41rem;
+      width: 41rem;
    }
 
 
@@ -1434,9 +1436,10 @@ figcaption {
    }
 
 }
+
 @media screen and (max-width:430px) {
    .join-title1:after {
-      width:22rem;
+      width: 22rem;
    }
 
 

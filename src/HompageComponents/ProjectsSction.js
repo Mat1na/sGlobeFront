@@ -6,6 +6,13 @@ import { HashLink as Link } from 'react-router-hash-link'
 
 
 function ProjectsSction() {
+  const [deviceSize, changeDeviceSize] = useState(window.innerWidth)
+  useEffect(() => {
+      const resizeW = () => changeDeviceSize(window.innerWidth);
+          window.addEventListener("resize", resizeW); // Update the width on resize
+          return () => window.removeEventListener("resize", resizeW);
+    });
+
   const [projects, setProjects] = useState([]);
   const [projectsExtra, setProjectsExtra] = useState([]);
   const [show, setShow] = useState(false);
@@ -17,17 +24,22 @@ function ProjectsSction() {
   const fetchProjectList = async () => {
     let res = await fetch("https://sglobe-server.onrender.com/projects/fetch-projects");
     let data = await res.json();
-    let firstLine = data.slice(0, 3)
+    if (deviceSize>767 && deviceSize<992){
+    let firstLine = data.slice(0, 2)
+    let rest = data.slice(2)
+    setProjects(firstLine);
+    setProjectsExtra(rest)}
+    else {
+      let firstLine = data.slice(0, 3)
     let rest = data.slice(3)
     setProjects(firstLine);
     setProjectsExtra(rest)
-    console.log(firstLine)
-    console.log(rest)
-    console.log(data)
+    }
   };
   useEffect(() => {
     fetchProjectList();
-  }, []);
+    // eslint-disable-next-line 
+  }, [deviceSize]);
 
 
   return <Container fluid className='mt-0 mb-0'>
@@ -37,7 +49,7 @@ function ProjectsSction() {
         {projects.map((project, index) => (
           <Col key={index} md={6} lg={4} className={`row-elem divslide-before  ${myProj2IsVisible ? "divslide2" : ""}`}  >
             <Link to={`/project/${project.title.replace(/\s/g, '-').toLowerCase()}`} className="project-link">
-              <LazyLoad className=" projects d-flex justify-content-center" >
+              <LazyLoad className="projects d-flex justify-content-center" >
 
                 <img
                   src={project.image}
