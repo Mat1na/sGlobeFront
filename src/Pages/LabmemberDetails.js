@@ -37,7 +37,7 @@ function LabmemberDetails() {
       <Container fluid className='details'>
         <div className="member-container">
           <div className="member-details pt-5">
-          {member.currentmember === "No"? (
+          {member.currentmember === "Yes"? (
                   <img
                   src={`${member.image}`}
                   className="member-details"
