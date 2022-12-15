@@ -11,7 +11,7 @@ function Publications() {
   const [publicationList, setPublicationList] = useState([]);
   const fetchPublications = async () => {
     let res = await fetch(
-      "http://localhost:3001/publications/fetch-publications"
+      "https://sglobe-server.onrender.com/publications/fetch-publications"
     );
     let data = await res.json();
     if (res.ok) {
@@ -27,7 +27,7 @@ function Publications() {
 
   // Delete button
   const Delete = (_id) => {
-    fetch(`http://localhost:3001/publications/${_id}`, {
+    fetch(`https://sglobe-server.onrender.com/publications/${_id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",

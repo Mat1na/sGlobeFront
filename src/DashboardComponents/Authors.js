@@ -10,7 +10,7 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 function Authors() {
   const [authorList, setAuthorList] = useState([]);
   const fetchAuthors = async () => {
-    let res = await fetch("http://localhost:3001/authors/fetch-authors");
+    let res = await fetch("https://sglobe-server.onrender.com/authors/fetch-authors");
     let data = await res.json();
     if (res.ok) {
       data.sort(function (a, b) {
@@ -27,7 +27,7 @@ function Authors() {
 
   // Delete button
   const Delete = (_id) => {
-    fetch(`http://localhost:3001/authors/${_id}`, {
+    fetch(`https://sglobe-server.onrender.com/authors/${_id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",

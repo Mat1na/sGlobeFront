@@ -76,7 +76,7 @@ function CreateLabMembers() {
   function handleSubmit(event) {
     event.preventDefault();
     input.interests = intrstArray;
-    fetch("http://localhost:3001/labmembers/create-member", {
+    fetch("https://sglobe-server.onrender.com/labmembers/create-member", {
       method: "POST",
       headers: {
         Accept: "application/json",

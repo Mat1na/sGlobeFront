@@ -10,7 +10,7 @@ function EditAuthor() {
   })
 
   const fetchAuthor = async () => {
-    let res = await fetch("http://localhost:3001/authors/fetch-authors");
+    let res = await fetch("https://sglobe-server.onrender.com/authors/fetch-authors");
     let data = await res.json();
     if (res.ok) {
       var filtereddata = data.find(item => item._id === authorid);
@@ -36,7 +36,7 @@ function EditAuthor() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    fetch(`http://localhost:3001/authors/edit-author/${authorid}`, {
+    fetch(`https://sglobe-server.onrender.com/authors/edit-author/${authorid}`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

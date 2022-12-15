@@ -39,7 +39,7 @@ function CreatePub() {
   function handleSubmit(event) {
     event.preventDefault();
     input.authors = authArray;
-    fetch("http://localhost:3001/publications/create-pub", {
+    fetch("https://sglobe-server.onrender.com/publications/create-pub", {
       method: "POST",
       headers: {
         Accept: "application/json",

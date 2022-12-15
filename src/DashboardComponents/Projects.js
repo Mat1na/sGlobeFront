@@ -10,7 +10,7 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 function Projects() {
   const [projectList, setProjectList] = useState([])
   const fetchProjects = async () => {
-    let res = await fetch('http://localhost:3001/projects/fetch-projects')
+    let res = await fetch('https://sglobe-server.onrender.com/projects/fetch-projects')
     let data = await res.json();
     if (res.ok) {
       data.sort(function(a,b){
@@ -27,7 +27,7 @@ function Projects() {
 
   // Delete button
   const Delete = (_id) => {
-    fetch(`http://localhost:3001/projects/${_id}`, {
+    fetch(`https://sglobe-server.onrender.com/projects/${_id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
