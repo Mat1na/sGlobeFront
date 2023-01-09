@@ -39,7 +39,7 @@ function PublicationSection() {
               <h5 className="publicationtitle montserrat">{publication.publicationtitle}</h5><br/>
               <p className="roboto publicationtext"> {publication.journal}, {publication.year}</p>
               <p className="roboto publicationtext">{publication.authors[0].author}, et al.</p>
-              <span className="readmore roboto publicationtext">Read more ...</span>
+              <span className="readmore roboto publicationtext2">Read more ...</span>
               </div>
               </div>
             </Link>
@@ -54,7 +54,7 @@ function PublicationSection() {
             <h5 className="publicationtitle montserrat">{publication.publicationtitle}</h5><br/>
             <p className="roboto publicationtext"> {publication.journal}, {publication.year}</p>
             <p className="roboto publicationtext">{publication.authors[0].author}, et al.</p>
-            <span className="readmore roboto publicationtext">Read more ...</span>
+            <span className="readmore roboto publicationtext2">Read more ...</span>
             </div>
             </div>
             </Link>
@@ -69,7 +69,7 @@ function PublicationSection() {
             <h5 className="publicationtitle montserrat">{publication.publicationtitle}</h5><br/>
             <p className="roboto publicationtext"> {publication.journal}, {publication.year}</p>
             <p className="roboto publicationtext">{publication.authors[0].author}, et al.</p>
-            <span className="readmore roboto publicationtext">Read more ...</span>
+            <span className="readmore roboto publicationtext2">Read more ...</span>
             </div>
             </div>
             </Link>
@@ -84,7 +84,7 @@ function PublicationSection() {
             <h5 className="publicationtitle montserrat">{publication.publicationtitle}</h5><br/>
             <p className="roboto publicationtext"> {publication.journal}, {publication.year}</p>
             <p className="roboto publicationtext">{publication.authors[0].author}, et al.</p>
-            <span className="readmore roboto publicationtext">Read more ...</span>
+            <span className="readmore roboto publicationtext2">Read more ...</span>
             </div>
             </div>
             </Link>
@@ -99,7 +99,7 @@ function PublicationSection() {
             <h5 className="publicationtitle montserrat">{publication.publicationtitle}</h5><br/>
             <p className="roboto publicationtext"> {publication.journal}, {publication.year}</p>
             <p className="roboto publicationtext">{publication.authors[0].author}, et al.</p>
-            <span className="readmore roboto publicationtext">Read more ...</span>
+            <span className="readmore roboto publicationtext2">Read more ...</span>
             </div>
             </div>
             </Link>
@@ -114,7 +114,7 @@ function PublicationSection() {
             <h5 className="publicationtitle montserrat">{publication.publicationtitle}</h5><br/>
             <p className="roboto publicationtext"> {publication.journal}, {publication.year}</p>
             <p className="roboto publicationtext">{publication.authors[0].author}, et al.</p>
-            <span className="readmore roboto publicationtext">Read more ...</span>
+            <span className="readmore roboto publicationtext2">Read more ...</span>
             </div>
             </div>
             </Link>
@@ -129,7 +129,7 @@ function PublicationSection() {
             <h5 className="publicationtitle montserrat">{publication.publicationtitle}</h5><br/>
             <p className="roboto publicationtext"> {publication.journal}, {publication.year}</p>
             <p className="roboto publicationtext">{publication.authors[0].author}, et al.</p>
-            <span className="readmore roboto publicationtext">Read more ...</span>
+            <span className="readmore roboto publicationtext2">Read more ...</span>
             </div>
             </div>
             </Link>

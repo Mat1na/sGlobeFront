@@ -1168,7 +1168,7 @@ td {
 }
 
 .readmore {
-   font-weight: 500;
+   font-weight: 500 !important;
 }
 
 /* Publication section */
@@ -1333,6 +1333,11 @@ figcaption {
 
 .publicationtext {
    font-weight: 300;
+   font-size:0.9rem ;
+   color: white;
+}
+
+.publicationtext2 {
    font-size:0.9rem ;
    color: white;
 }
