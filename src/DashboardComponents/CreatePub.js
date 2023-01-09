@@ -306,7 +306,7 @@ function CreatePub() {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3">
+        {/* <Form.Group className="mb-3">
           <Form.Label>Link image</Form.Label>
           <Form.Control
             name="image"
@@ -314,7 +314,7 @@ function CreatePub() {
             onChange={handleChange}
             value={input.image}
           />
-        </Form.Group>
+        </Form.Group> */}
 
         <Button variant="primary" type="submit" onClick={btnClick}>
           Submit

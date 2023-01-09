@@ -232,7 +232,7 @@ function EditPubList() {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3">
+        {/* <Form.Group className="mb-3">
           <Form.Label>Link image</Form.Label>
           <Form.Control
             name="image"
@@ -240,7 +240,7 @@ function EditPubList() {
             onChange={handleChange}
             defaultValue={pub.image}
           />
-        </Form.Group>
+        </Form.Group> */}
 
         <Button variant="primary" type="submit" onClick={btnClick}>
           Submit
