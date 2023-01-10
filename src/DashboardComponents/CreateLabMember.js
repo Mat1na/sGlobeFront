@@ -119,7 +119,7 @@ function CreateLabMembers() {
 
   return (
     <>
-      <Container>
+      <Container className="pb-4"  >
       <h1 className="dashboardmargin">Create new lab member</h1>
         <Link to={"/labmembers"} className="btn btn-danger mr-2 mb-2">
             Go back

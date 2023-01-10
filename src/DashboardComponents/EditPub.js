@@ -114,7 +114,7 @@ function EditPubList() {
   }
   return (
 
-    <Container>
+    <Container className="pb-4"  >
       <h1 className="dashboardmargin">Edit publication</h1>
       <Link to={"/publications"} className="btn btn-danger mr-2 mb-2">
          Go back

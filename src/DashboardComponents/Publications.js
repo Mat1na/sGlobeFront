@@ -60,7 +60,7 @@ function Publications() {
 
   return (
     <>
-      <Container>
+      <Container className="pb-4"  >
       <h1 className="dashboardmargin">Publications List </h1>
         <div>
           <Link

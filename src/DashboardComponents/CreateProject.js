@@ -89,7 +89,7 @@ function CreateProject() {
     setResearchersArray([...researchersArray, {researcher: "" }]);
   };
   return (
-    <Container>
+    <Container className="pb-4">
       <h1 className="dashboardmargin">Create new project</h1>
       <Link to={"/projects"} className="btn btn-danger mr-2 mb-2">
           Go back

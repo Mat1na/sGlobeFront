@@ -61,7 +61,7 @@ function LabMembers() {
 
   return (
     <>
-      <Container>
+      <Container className="pb-4"  >
       <h1 className="dashboardmargin">Lab Members List </h1>
         <div>
         <Link

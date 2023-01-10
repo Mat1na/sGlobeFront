@@ -60,7 +60,7 @@ function Authors() {
   };
 
   return (
-    <Container>
+    <Container className="pb-4"  >
       <h1 className="dashboardmargin">Authors</h1>
       <Link to={"/authors/create-author"} className="btn btn-secondary m-2">
         <BsFillPersonPlusFill /> Add new Author</Link>

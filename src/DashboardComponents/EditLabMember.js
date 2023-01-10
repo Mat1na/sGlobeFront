@@ -139,7 +139,7 @@ function EditLabMember() {
 
   return (
     <>
-      <Container>
+      <Container className="pb-4"  >
       <h1 className="dashboardmargin">Edit lab member</h1>
         <Link to={"/labmembers"} className="btn btn-danger mr-2 mb-2">
           Go back

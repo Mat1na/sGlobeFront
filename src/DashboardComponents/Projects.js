@@ -59,7 +59,7 @@ function Projects() {
   };
   return (
     <>
-      <Container>
+      <Container className="pb-4">
       <h1 className="dashboardmargin">Projects</h1>
           <Link to={"/projects/create-project"} className="btn btn-secondary m-2" > Add new project</Link>
           <Link to={"/dashboard"} className="btn btn-danger m-2">
