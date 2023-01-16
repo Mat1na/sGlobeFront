@@ -14,6 +14,7 @@ function PublicationList() {
   const {ref:myRef9, inView:myRef1IsVisible9}=useInView({ triggerOnce: true })
   const {ref:myRef10, inView:myRef1IsVisible10}=useInView({ triggerOnce: true })
 
+  const [publication2023, setPublication2023] = useState([])
   const [publication2022, setPublication2022] = useState([]);
   const [publication2021, setPublication2021] = useState([]);
   const [publication2020, setPublication2020] = useState([]);
@@ -24,13 +25,18 @@ function PublicationList() {
   const [publication2015, setPublication2015] = useState([]);
   const [publication2014, setPublication2014] = useState([]);
   const [publication2011, setPublication2011] = useState([]);
-  const [authorList, setAuthorList] = useState({})
+  const [authorList, setAuthorList] = useState([])
 
 
   const fetchPublications = async () => {
     let res = await fetch(`${process.env.REACT_APP_BASE_URL}/publications/fetch-publications`);
     let data = await res.json();
     if (res.ok) {
+
+      const data2023 = data.filter(obj => {
+        return obj.year === "2023";
+      });
+      setPublication2023(data2023.reverse())
 
       const data2022 = data.filter(obj => {
         return obj.year === "2022";
@@ -104,6 +110,29 @@ function PublicationList() {
     <Container fluid className='details-pub-list'>
       <h1 className='montserrat publicationdetailtitle'>Peer reviewed publications</h1>
       <p className='roboto publicationlisttext'>Researchers from the sGlobe lab are indicated in bold</p>
+      {publication2023.length > 0 && <div className={`${myRef1IsVisible1? "divMove4":""}`} ref={myRef1}>
+        <b className='publicationyear montserrat'>2023</b>
+        <ul className='publicationlisttext roboto'>
+          {publication2023.map((item, index) => {
+            return <li key={item.id} className='pb-1 publicationlistarticle'>{publication2023[index].order} - {publication2023[index].authors.map((author, index, array) => {
+              if (index + 1 === array.length) {
+                if (authorList.includes(author['author'])) {
+                  return <p key={author.id} className='authorsforpublicationlist fw-bold'>{author['author']} </p>
+                } else { return <p key={author.id} className='authorsforpublicationlist'>{author['author']} </p> }
+              }
+              else {
+                if (authorList.includes(author['author'])) {
+                  return <p key={author.id} className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
+                }
+                else {
+                  return <p key={author.id} className='authorsforpublicationlist'>{author['author']}, </p>
+                }
+              }
+            })}
+              {publication2023[index].publicationtitle} {publication2023[index].journal}, {publication2023[index].issue} [<a href={publication2023[index].link} target="_blank" rel="noreferrer" className='publication-link'>Link</a>]</li>
+          })}
+        </ul>
+      </div>}
       {publication2022.length > 0 && <div className={`${myRef1IsVisible1? "divMove4":""}`} ref={myRef1}>
         <b className='publicationyear montserrat'>2022</b>
         <ul className='publicationlisttext roboto'>
