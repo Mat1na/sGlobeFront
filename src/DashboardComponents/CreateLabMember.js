@@ -20,6 +20,7 @@ function CreateLabMembers() {
     email: "",
     currentmember: "",
   });
+  const userToken = sessionStorage.getItem('token')
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -81,6 +82,7 @@ function CreateLabMembers() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
+        'authorization': userToken
       },
       body: JSON.stringify(input),
     })

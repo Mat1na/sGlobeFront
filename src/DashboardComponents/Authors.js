@@ -8,6 +8,7 @@ import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 function Authors() {
+  const userToken = sessionStorage.getItem('token')
   const [authorList, setAuthorList] = useState([]);
   const fetchAuthors = async () => {
     let res = await fetch(`${process.env.REACT_APP_BASE_URL}/authors/fetch-authors`);
@@ -31,6 +32,7 @@ function Authors() {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
+        'authorization': userToken
       },
     })
       .catch((error) => {

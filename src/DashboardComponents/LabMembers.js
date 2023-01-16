@@ -8,6 +8,7 @@ import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 function LabMembers() {
+  const userToken = sessionStorage.getItem('token')
   const [labmemberList, setLabmemberList] = useState([]);
   const fetchLabmembers = async () => {
     let res = await fetch(`${process.env.REACT_APP_BASE_URL}/labmembers/fetch-labmembers`);
@@ -31,6 +32,7 @@ function LabMembers() {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
+        'authorization': userToken
       },
     })
       .catch((error) => {

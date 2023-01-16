@@ -7,6 +7,7 @@ import { AiOutlineUserDelete } from "@react-icons/all-files/ai/AiOutlineUserDele
 
 
 function EditPubList() {
+  const userToken = sessionStorage.getItem('token')
   const { pubid } = useParams();
   const myRefs=useRef([]);
   const [pub, setPub] = useState({});
@@ -73,6 +74,7 @@ function EditPubList() {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
+        'authorization': userToken
       },
       body: JSON.stringify(input)
     })

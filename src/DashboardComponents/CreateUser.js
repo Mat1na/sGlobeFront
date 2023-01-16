@@ -6,6 +6,7 @@ function CreateUser() {
         username: '',
         password: ''
     })
+    const userToken = sessionStorage.getItem('token')
 
     function handleChange(event) {
         const { name, value } = event.target
@@ -25,6 +26,7 @@ function CreateUser() {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
+            'authorization': userToken
           },
           body: JSON.stringify(input)
         });

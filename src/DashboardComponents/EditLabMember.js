@@ -5,6 +5,7 @@ import { CgPlayListAdd } from "@react-icons/all-files/cg/CgPlayListAdd";
 import { RiDeleteBin6Fill } from "@react-icons/all-files/ri/RiDeleteBin6Fill";
 
 function EditLabMember() {
+  const userToken = sessionStorage.getItem('token')
   // Handle change for interests and rest inputs
   const { memberid } = useParams();
   const myRefs = useRef([]);
@@ -115,6 +116,7 @@ function EditLabMember() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
+        'authorization': userToken
       },
       body: JSON.stringify(input),
     })

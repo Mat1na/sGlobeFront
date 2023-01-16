@@ -17,6 +17,7 @@ function CreatePub() {
     link: "",
     image: "",
   });
+  const userToken = sessionStorage.getItem('token')
 
   function handleChange(event, index) {
     const { name, value } = event.target;
@@ -44,6 +45,7 @@ function CreatePub() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
+        'authorization': userToken
       },
       body: JSON.stringify(input),
     })

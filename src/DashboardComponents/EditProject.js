@@ -5,6 +5,7 @@ import { AiOutlineUserAdd } from "@react-icons/all-files/ai/AiOutlineUserAdd";
 import { AiOutlineUserDelete } from "@react-icons/all-files/ai/AiOutlineUserDelete";
 
 function EditProject() {
+  const userToken = sessionStorage.getItem('token')
   const { projectid } = useParams();
   const myRefs=useRef([]);
   const [project, setProject] = useState({});
@@ -63,6 +64,7 @@ function EditProject() {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
+        'authorization': userToken
       },
       body: JSON.stringify(input)
     })

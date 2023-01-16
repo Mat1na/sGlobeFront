@@ -8,6 +8,7 @@ function EditAuthor() {
   const [input, setInput] = useState({
     authorname: ""
   })
+  const userToken = sessionStorage.getItem('token')
 
   const fetchAuthor = async () => {
     let res = await fetch(`${process.env.REACT_APP_BASE_URL}/authors/fetch-authors`);
@@ -41,6 +42,7 @@ function EditAuthor() {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
+        'authorization': userToken
       },
       body: JSON.stringify(input)
     })

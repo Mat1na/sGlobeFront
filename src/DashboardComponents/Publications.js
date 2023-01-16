@@ -8,6 +8,7 @@ import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 
 function Publications() {
+  const userToken = sessionStorage.getItem('token')
   const [publicationList, setPublicationList] = useState([]);
   const fetchPublications = async () => {
     let res = await fetch(
@@ -31,6 +32,7 @@ function Publications() {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
+        'authorization': userToken
       },
     })
       .catch((error) => {
