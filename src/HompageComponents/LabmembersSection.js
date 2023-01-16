@@ -53,7 +53,7 @@ function LabmembersSection({ scrollPosition }) {
     // eslint-disable-next-line 
   }, [deviceSize]);
 
-  console.log(process.env)
+  
 
   return (
 
