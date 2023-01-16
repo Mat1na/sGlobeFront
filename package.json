@@ -2,7 +2,7 @@
   "name": "final_project",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://sglobe-server.onrender.com",
+
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "@testing-library/jest-dom": "^5.16.5",

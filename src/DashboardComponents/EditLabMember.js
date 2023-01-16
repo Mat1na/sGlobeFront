@@ -27,7 +27,7 @@ function EditLabMember() {
   useEffect(() => {
     const fetchLabmembers = async () => {
       let res = await fetch(
-        "https://sglobe-server.onrender.com/labmembers/fetch-labmembers"
+        `${process.env.REACT_APP_BASE_URL}/labmembers/fetch-labmembers`
       );
       let data = await res.json();
       if (res.ok) {
@@ -110,7 +110,7 @@ function EditLabMember() {
   function handleSubmit(event) {
     event.preventDefault();
     input.interests = intrstArray;
-    fetch(`https://sglobe-server.onrender.com/labmembers/edit-labmember/${memberid}`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/labmembers/edit-labmember/${memberid}`, {
       method: "PUT",
       headers: {
         Accept: "application/json",

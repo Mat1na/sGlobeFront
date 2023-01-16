@@ -17,7 +17,7 @@ function Alumni() {
       "visiting PhD student",
       "Master student",
     ];
-    let res = await fetch("https://sglobe-server.onrender.com/labmembers/fetch-labmembers");
+    let res = await fetch(`${process.env.REACT_APP_BASE_URL}/labmembers/fetch-labmembers`);
     let data = await res.json();
     setLabmemberList(data);
     var sorted = data.sort(

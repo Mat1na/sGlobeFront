@@ -11,7 +11,7 @@ function Publications() {
   const [publicationList, setPublicationList] = useState([]);
   const fetchPublications = async () => {
     let res = await fetch(
-      "https://sglobe-server.onrender.com/publications/fetch-publications"
+      `${process.env.REACT_APP_BASE_URL}/publications/fetch-publications`
     );
     let data = await res.json();
     if (res.ok) {
@@ -27,7 +27,7 @@ function Publications() {
 
   // Delete button
   const Delete = (_id) => {
-    fetch(`https://sglobe-server.onrender.com/publications/${_id}`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/publications/${_id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",

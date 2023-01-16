@@ -5,7 +5,7 @@ export const RequireAuth = ({ children }) => {
 
   useEffect(() => {
     const tokenObj = { token: userToken }
-    fetch('https://sglobe-server.onrender.com/login/verify-token', {
+    fetch(`${process.env.REACT_APP_BASE_URL}/login/verify-token`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

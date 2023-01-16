@@ -21,7 +21,7 @@ function CreateAuthor() {
 
   function handleSubmit(event) {
     event.preventDefault();    
-    fetch('https://sglobe-server.onrender.com/authors/create-author', {
+    fetch(`${process.env.REACT_APP_BASE_URL}/authors/create-author`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
