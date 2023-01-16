@@ -24,7 +24,7 @@ function PublicationList() {
   const [publication2015, setPublication2015] = useState([]);
   const [publication2014, setPublication2014] = useState([]);
   const [publication2011, setPublication2011] = useState([]);
-  const [authorList, setAuthorList] = useState({})
+  const [authorList, setAuthorList] = useState([])
 
 
   const fetchPublications = async () => {
