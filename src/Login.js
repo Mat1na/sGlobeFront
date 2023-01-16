@@ -4,7 +4,7 @@ import { useAuth } from './Components/auth';
 
 
 export const Login = () => {
-  const [input, setInput] = useState({user: "",password: ""})
+  const [input, setInput] = useState({ user: "", password: "" })
   const auth = useAuth()
 
   function handleChange(event) {
@@ -21,7 +21,7 @@ export const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const user = input.user
-    console.log(input)
+
     auth.login(user);
     fetch(`${process.env.REACT_APP_BASE_URL}/login`, {
       method: "POST",
@@ -42,14 +42,13 @@ export const Login = () => {
               reader.read().then(({ done, value }) => {
                 // If there is no more data to read
                 if (done) {
-                  console.log('done', done);
                   controller.close();
                   return;
                 }
                 // Get the data and send it to the browser via the controller
                 controller.enqueue(value);
                 // Check chunks by logging to the console
-                console.log(done, value);
+
                 push();
               });
             }
@@ -63,7 +62,7 @@ export const Login = () => {
       )
       .then((result) => {
         // Do things with result
-        console.log(result)
+
         if (result.split("\"")[3] !== "wrong") {
           sessionStorage.setItem("token", result.split("\"")[3]);
           window.location.replace("/dashboard")
