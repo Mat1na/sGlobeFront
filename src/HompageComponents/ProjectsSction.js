@@ -22,7 +22,7 @@ function ProjectsSction() {
 
 
   const fetchProjectList = async () => {
-    let res = await fetch("https://sglobe-server.onrender.com/projects/fetch-projects");
+    let res = await fetch(`${process.env.REACT_APP_BASE_URL}/projects/fetch-projects`);
     let data = await res.json();
     if (deviceSize>767 && deviceSize<992){
     let firstLine = data.slice(0, 2)

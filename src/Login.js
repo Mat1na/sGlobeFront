@@ -17,12 +17,13 @@ export const Login = () => {
     });
   }
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const user = input.user
     console.log(input)
     auth.login(user);
-    fetch("https://sglobe-server.onrender.com/login", {
+    fetch(`${process.env.REACT_APP_BASE_URL}/login`, {
       method: "POST",
       headers: {
         Accept: "application/json",

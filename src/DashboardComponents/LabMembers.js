@@ -10,7 +10,7 @@ import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
 function LabMembers() {
   const [labmemberList, setLabmemberList] = useState([]);
   const fetchLabmembers = async () => {
-    let res = await fetch("https://sglobe-server.onrender.com/labmembers/fetch-labmembers");
+    let res = await fetch(`${process.env.REACT_APP_BASE_URL}/labmembers/fetch-labmembers`);
     let data = await res.json();
     if (res.ok) {
       data.sort(function (a, b) {
@@ -27,7 +27,7 @@ function LabMembers() {
 
   // Delete button
   const Delete = (_id) => {
-    fetch(`https://sglobe-server.onrender.com/labmembers/${_id}`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/labmembers/${_id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",

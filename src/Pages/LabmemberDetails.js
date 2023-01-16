@@ -15,7 +15,7 @@ function LabmemberDetails() {
   const [interestsList, setInterestList] = useState([]);
 
   const fetchLabmember = async () => {
-    let res = await fetch("https://sglobe-server.onrender.com/labmembers/fetch-labmembers");
+    let res = await fetch(`${process.env.REACT_APP_BASE_URL}/labmembers/fetch-labmembers`);
     let data = await res.json();
     let labmeberParam = lab.split("-").toString();
     if (res.ok) {

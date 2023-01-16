@@ -20,7 +20,7 @@ function CreateUser() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        fetch('https://sglobe-server.onrender.com/users/create-user', {
+        fetch(`${process.env.REACT_APP_BASE_URL}/users/create-user`, {
           method: 'POST',
           headers: {
             'Accept': 'application/json',

@@ -8,7 +8,7 @@ function PublicationDetails() {
   const [authorsList, setAuthorsList] = useState([])
 
   const fetchPublication = async () => {
-    let res = await fetch("https://sglobe-server.onrender.com/publications/fetch-publications");
+    let res = await fetch(`${process.env.REACT_APP_BASE_URL}/publications/fetch-publications`);
     let data = await res.json();
     if (res.ok) {
       var filtereddata = data.find(item => item.order === pub.split("-").slice(-1).toString());

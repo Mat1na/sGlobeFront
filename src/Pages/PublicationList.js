@@ -29,7 +29,7 @@ function PublicationList() {
 
 
   const fetchPublications = async () => {
-    let res = await fetch("https://sglobe-server.onrender.com/publications/fetch-publications");
+    let res = await fetch(`${process.env.REACT_APP_BASE_URL}/publications/fetch-publications`);
     let data = await res.json();
     if (res.ok) {
 
@@ -95,7 +95,7 @@ function PublicationList() {
   }, []);
 
   const fetchAuthors = async () => {
-    let res = await fetch("https://sglobe-server.onrender.com/authors/fetch-authors");
+    let res = await fetch(`${process.env.REACT_APP_BASE_URL}/authors/fetch-authors`);
     let data = await res.json();
     if (res.ok) {
       let result = data.map(({ authorname }) => authorname )

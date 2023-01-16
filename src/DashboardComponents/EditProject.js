@@ -22,7 +22,7 @@ function EditProject() {
 
   useEffect(() => {
     const fetchProject = async () => {
-      let res = await fetch("https://sglobe-server.onrender.com/projects/fetch-projects");
+      let res = await fetch(`${process.env.REACT_APP_BASE_URL}/projects/fetch-projects`);
       let data = await res.json();
       if (res.ok) {
         var filtereddata = data.find(item => item._id === projectid);
@@ -58,7 +58,7 @@ function EditProject() {
   function handleSubmit(event) {
     event.preventDefault();
     input.researchers= researchersArray;
-    fetch(`https://sglobe-server.onrender.com/projects/edit-project/${projectid}`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/projects/edit-project/${projectid}`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

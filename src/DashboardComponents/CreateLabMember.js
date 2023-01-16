@@ -76,7 +76,7 @@ function CreateLabMembers() {
   function handleSubmit(event) {
     event.preventDefault();
     input.interests = intrstArray;
-    fetch("https://sglobe-server.onrender.com/labmembers/create-member", {
+    fetch(`${process.env.REACT_APP_BASE_URL}/labmembers/create-member`, {
       method: "POST",
       headers: {
         Accept: "application/json",

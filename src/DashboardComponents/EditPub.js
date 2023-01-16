@@ -29,7 +29,7 @@ function EditPubList() {
 
   useEffect(() => {
     const fetchPub = async () => {
-      let res = await fetch("https://sglobe-server.onrender.com/publications/fetch-publications");
+      let res = await fetch(`${process.env.REACT_APP_BASE_URL}/publications/fetch-publications`);
       let data = await res.json();
       if (res.ok) {
         var filtereddata = data.find(item => item._id === pubid);
@@ -68,7 +68,7 @@ function EditPubList() {
   function handleSubmit(event) {
     event.preventDefault();
     input.authors = authArray;
-    fetch(`https://sglobe-server.onrender.com/projects/edit-pub/${pubid}`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/projects/edit-pub/${pubid}`, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',

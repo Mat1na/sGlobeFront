@@ -35,7 +35,7 @@ function CreateProject() {
   function handleSubmit(event) {
     event.preventDefault();
     input.researchers= researchersArray;
-    fetch("https://sglobe-server.onrender.com/projects/create-project", {
+    fetch(`${process.env.REACT_APP_BASE_URL}/projects/create-project`, {
       method: "POST",
       headers: {
         Accept: "application/json",
