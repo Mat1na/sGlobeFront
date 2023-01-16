@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { GoMail } from "@react-icons/all-files/go/GoMail";
-import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
-import { FaOrcid } from "@react-icons/all-files/fa/FaOrcid";
-import { SiResearchgate } from "@react-icons/all-files/si/SiResearchgate";
-import { SiGooglescholar } from "@react-icons/all-files/si/SiGooglescholar";
+// import { GoMail } from "@react-icons/all-files/go/GoMail";
+// import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
+// import { FaOrcid } from "@react-icons/all-files/fa/FaOrcid";
+// import { SiResearchgate } from "@react-icons/all-files/si/SiResearchgate";
+// import { SiGooglescholar } from "@react-icons/all-files/si/SiGooglescholar";
 
 function Alumni() {
   const [labmemberList, setLabmemberList] = useState([]);
@@ -45,10 +45,10 @@ function Alumni() {
                   <h5 className='alumni-name'>{member.membername}</h5>
                   <p className="roboto alumni-function">
                     {member.functionbasic}
-                    {member.functionextra}
+                    {/* {member.functionextra} */}
                   </p>
                 </Link>
-                {member.googlescholar !== undefined &&
+                {/* {member.googlescholar !== undefined &&
                 member.googlescholar !== "" ? (
                   <a
                     href={member.googlescholar}
@@ -116,7 +116,7 @@ function Alumni() {
                   </a>
                 ) : (
                   " "
-                )}
+                )} */}
               </Col>
             ) : ("")
       })}
