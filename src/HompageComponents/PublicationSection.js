@@ -19,7 +19,8 @@ function PublicationSection() {
     let res = await fetch(`${process.env.REACT_APP_BASE_URL}/publications/fetch-publications`);
     let data = await res.json();
     let filtereddata = data.slice(-7)
-    setLastPublications(filtereddata)
+    let reverseddata=filtereddata.reverse()
+    setLastPublications(reverseddata)
    
   };
   useEffect(() => {
