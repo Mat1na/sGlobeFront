@@ -24,7 +24,8 @@ function LabmemberDetails() {
           item.membername.toLowerCase().split(" ").toString() === labmeberParam
       );
       setMember(filtereddata);
-      setInterestList(filtereddata.interests)
+      if (filtereddata !==undefined){
+      setInterestList(filtereddata.interests)}
     }
   };
   useEffect(() => {
@@ -36,7 +37,7 @@ function LabmemberDetails() {
     <>
       <Container fluid className='details'>
         <div className="member-container">
-          <div className="member-details pt-5">
+          {member !== undefined && <div className="member-details pt-5">
           {member.currentmember === "Yes"? (
                   <img
                   src={`${member.image}`}
@@ -45,8 +46,8 @@ function LabmemberDetails() {
                 />
               ) : ("")}
        
-          </div>
-          <div className="d-block text-center">
+          </div>}
+          {member !== undefined &&<div className="d-block text-center">
             <h1 className="pt-3 montserrat">{member.membername}</h1>
             <p className="roboto mb-0 function-details">{member.functionbasic}</p>
             <p className="roboto function-details">{member.functionextra}</p>
@@ -121,7 +122,8 @@ function LabmemberDetails() {
                 " "
               )}
             </div>
-          </div>
+          </div>}
+          {member === undefined && <div className='roboto paragraphtext'>This lab member was not found. Please return to the <a href='/' className='join-link'>homepage</a>.</div>}
         </div>
       </Container>
     </>

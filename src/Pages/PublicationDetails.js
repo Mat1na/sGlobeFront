@@ -13,7 +13,8 @@ function PublicationDetails() {
     if (res.ok) {
       var filtereddata = data.find(item => item.order === pub.split("-").slice(-1).toString());
       setPublication(filtereddata);
-      setAuthorsList(filtereddata.authors)
+      if (filtereddata !==undefined){
+      setAuthorsList(filtereddata.authors)}
     }
   };
   useEffect(() => {
@@ -23,14 +24,15 @@ function PublicationDetails() {
   return (
     <>
       <Container fluid className='pub-details'>
-        <div className='m-4'>
+      {publication !== undefined && <div className='m-4'>
           <h1 className='montserrat publicationdetailtitle'>{publication.publicationtitle}</h1>
           <p className="journaltitle roboto project-summary">{publication.journal}, {publication.year}</p>
           <p className="authorslist roboto project-summary">{authorsList.length > 0 && authorsList.map(author => { return author['author'] }).join(', ')}</p>
           <h4 className="montserrat roboto">Abstract</h4>
           <p className='roboto project-summary'>{publication.abstract}</p>
           <p className='roboto publicationdetaillink'>Link: <a href={publication.link} target="_blank" rel="noreferrer" className='roboto pub-link'>{`${publication.link}`}</a></p>
-        </div>
+        </div>}
+        {publication === undefined && <div className='roboto paragraphtext'>This publication was not found. Please return to the <a href='/' className='join-link'>homepage</a>.</div>}
       </Container>
     </>
   )
