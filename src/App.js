@@ -28,6 +28,7 @@ import Layoutmodified from './Components/Layoutmodified';
 import LayoutmodifiedFooter from './Components/LayoutmodifiedFooter';
 import ReactGA from 'react-ga';
 import ScrollToTop from './Components/scrollToTop';
+import NotFound from './Pages/NotFound';
 const TRACKING_ID = "UA-250494226-1";
 ReactGA.initialize(TRACKING_ID);
 
@@ -52,8 +53,9 @@ function App() {
                         <Route path='/labmember/:lab' element={<LabmemberDetails />} />
                         <Route path='/project/:proj' element={<ProjectDetails />} />
                         <Route path='/alumni' element={<Alumni />} />
-                        </Route>
-                        <Route element={<LayoutmodifiedFooter/>}>
+                        <Route path='*' element={<NotFound />} />
+                    </Route>
+                    <Route element={<LayoutmodifiedFooter />}>
                         {/* Dashboard */}
                         <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
                         <Route path="/labmembers" element={<RequireAuth><LabMembers /></RequireAuth>} />
@@ -69,7 +71,7 @@ function App() {
                         <Route path="/authors/create-author" element={<RequireAuth><CreateAuthor /></RequireAuth>} />
                         <Route path="/authors/edit-author/:authorid" element={<RequireAuth><EditAuthor /></RequireAuth>} />
                         <Route path="/login" element={<Login />} />
-                        </Route>
+                    </Route>
 
                 </Routes>
             </BrowserRouter>
