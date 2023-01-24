@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Badge, Col, Container, Row } from "react-bootstrap";
+import {  Button, Col, Container, Row } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 import LazyLoad from 'react-lazyload';
 import { HashLink as Link } from 'react-router-hash-link'
@@ -103,7 +103,7 @@ function ProjectsSction() {
         })}
        
       </Row>
-        <Col ref={myProj3} md={12}>{show ? (<Link to="/#projects" className={`pt-5 buttonpadding ${myProj3IsVisible ? "divslide" : ""}`}><Badge onClick={() => setShow(false)} className={` badge-icon montserrat `}>Show less</Badge></Link>) : (<Badge onClick={() => {setShow(true);window.scrollBy(0,200)}} className={` badge-icon montserrat more-projects ${myProj3IsVisible ? "divslide" : ""}`}>View all projects</Badge>)}</Col>
+        <Col ref={myProj3} md={6}>{show ? (<Link to="/#projects" className={`pt-5 buttonpadding ${myProj3IsVisible ? "divslide" : ""}`}><Button onClick={() => setShow(false)} className={` badge-icon montserrat more-projects d-flex  text-center justify-content-center align-items-center `}>Show less</Button></Link>) : (<Button onClick={() => {setShow(true);window.scrollBy(0,200)}} className={` badge-icon montserrat more-projects d-flex  text-center justify-content-center align-items-center ${myProj3IsVisible ? "divslide" : ""}`}>View all projects</Button>)}</Col>
    
     </div>
   </Container>
