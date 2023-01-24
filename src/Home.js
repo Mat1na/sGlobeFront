@@ -13,10 +13,16 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>sGlobe Research Lab</title>
+        <title>
+          sGlobe Research Lab - Protecting biodiversity in a changing world
+        </title>
         <meta
           name="description"
-          content="Beginner friendly page for learning React Helmet."
+          content="We aim to improve our understanding of the effects of global change on biodiversity and the functioning of terrestrial ecosystems. We focus on climate change and invasive species, as these are identified as two of the most important anthropogenic drivers of biodiversity loss"
+        />
+        <meta
+          name="keywords"
+          content="sGlobe, Biodiversity, Research Lab,sGlobelab, Van Meerbeek,Climate change, Ecosystem,KU Leuven"
         />
       </Helmet>
       <BackToTopButton />
