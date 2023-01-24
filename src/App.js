@@ -52,7 +52,7 @@ function App() {
       />
       <meta
         name="keywords"
-        content="sGlobe,Microclimate,Ecology,Biodiversity "
+        content="sglobe,sglobelab,Microclimate,Ecology,Biodiversity "
       />
     </Helmet>
                 <Routes>
