@@ -796,6 +796,7 @@ td {
    border-radius: 5%;
    margin: 10px;
    transition: 0.2s;
+   transition-timing-function: ease;
 }
 
 .member-photo {
