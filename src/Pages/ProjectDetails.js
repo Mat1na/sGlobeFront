@@ -26,7 +26,7 @@ function ProjectDetails({ width, height, src, alt, ...rest }) {
             .toString() === projectParam
       );
       setProject(filtereddata);
-      setResearchersList(filtereddata.researchers);
+      if (filtereddata !==undefined){setResearchersList(filtereddata.researchers)};
     }
   };
   useEffect(() => {
@@ -36,7 +36,7 @@ function ProjectDetails({ width, height, src, alt, ...rest }) {
 
   return (
     <Container fluid className='details'>
-      <Row className="d-flex align-items-center justify-content-center">
+      {project !== undefined && <Row className="d-flex align-items-center justify-content-center">
         <Col md={4} className={`pe-4 ${myRef1IsVisible1 ? "divMove2" : ""}`} ref={myRef1}><div className="research-photo-container-details">
           <img
             src={project.image} alt={project.title} className='project-details'
@@ -72,7 +72,8 @@ function ProjectDetails({ width, height, src, alt, ...rest }) {
           })}
           </h6>
         </Col>
-      </Row>
+      </Row>}
+      {project === undefined && <div className='roboto paragraphtext'>This project was not found. Please return to the <a href='/' className='join-link'>homepage</a>.</div>}
     </Container>
   );
 }
