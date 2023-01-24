@@ -170,7 +170,7 @@ function LabmembersSection({ scrollPosition }) {
   </Col>):("")
           ) : ("")
         })}
-<Col  md={12}>{show ? (<Link to="/#labmembers" className={`pt-5 buttonpadding `}><Badge onClick={() => setShow(false)} className={` badge-icon montserrat `}>Show less</Badge></Link>) : (<Badge onClick={() => setShow(true)} className={` badge-icon montserrat more-projects `}>View all lab members</Badge>)}</Col>
+<Col  md={12}>{show ? (<Link to="/#labmembers" className={`pt-5 buttonpadding `}><Badge onClick={() => setShow(false)} className={` badge-icon montserrat `}>Show less</Badge></Link>) : (<Badge onClick={() => {setShow(true); window.scrollBy(0,200)}} className={` badge-icon montserrat more-projects `}>View all lab members</Badge>)}</Col>
 
         {/* Alumni Section*/}
         <Link to={"/alumni"} className="pt-5 buttonpadding"><h3 className={`d-flex divslide-before  ${myLab4IsVisible ? "divslide" : ""} `} ref={myLab4}><Badge className="badge-icon montserrat">SEE ALUMNI <FaArrowCircleRight className="arrow-icon" /></Badge></h3></Link>
