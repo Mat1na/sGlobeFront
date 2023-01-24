@@ -992,7 +992,7 @@ td {
    color: var(--Dark4);
    width: 100%;
    height: 30px;
-   transition: 0.8s;
+   transition: 2s;
 }
 
 .badge-icon:hover {
@@ -1004,6 +1004,31 @@ td {
    box-shadow: inset 50rem 0 0 0 var(--Dark4);
 }
 .badge-icon:focus {
+   background-color: inherit ;
+   border-color: var(--Dark4);
+   color: #fff;
+   box-shadow: inset 40rem 0 0 0 var(--Dark4)
+}
+
+.badge-icon2 {
+   background: none;
+   border: 2px solid;
+   font: inherit;
+   color: var(--Dark4);
+   width: 100%;
+   height: 30px;
+   transition: 0.8s;
+}
+
+.badge-icon2:hover {
+   background-color: inherit !important;
+   color: var(--Light2);
+   width: 100%;
+   border-color: var(--Dark4);
+   color: #fff;
+   box-shadow: inset 50rem 0 0 0 var(--Dark4);
+}
+.badge-icon2:focus {
    background-color: inherit ;
    border-color: var(--Dark4);
    color: #fff;
@@ -1327,7 +1352,7 @@ a {
 }
 
 polyline {
-   stroke: var(--Dark);
+   stroke: #fff;
 }
 
 .car-icons {

@@ -103,7 +103,36 @@ function ProjectsSction() {
         })}
        
       </Row>
-        <Col ref={myProj3} md={6}>{show ? (<Link to="/#projects" className={`pt-5 buttonpadding ${myProj3IsVisible ? "divslide" : ""}`}><Button onClick={() => setShow(false)} className={` badge-icon montserrat more-projects d-flex  text-center justify-content-center align-items-center `}>Show less</Button></Link>) : (<Button onClick={() => {setShow(true);window.scrollBy(0,200)}} className={` badge-icon montserrat more-projects d-flex  text-center justify-content-center align-items-center ${myProj3IsVisible ? "divslide" : ""}`}>View all projects</Button>)}</Col>
+        {/* <Col ref={myProj3} md={12} className="d-flex text-center justify-content-center align-items-center">
+          {show ? (<Link to="/#projects" className={`pt-5 buttonpadding ${myProj3IsVisible ? "divslide" : ""}`}><Button onClick={() => setShow(false)} className={`badge-icon2 montserrat more-projects d-flex text-center justify-content-center align-items-center `}>Show less</Button></Link>) : (<Button onClick={() => {setShow(true);window.scrollBy(0,200)}} className={`badge-icon2 montserrat more-projects d-flex  text-center justify-content-center align-items-center ${myProj3IsVisible ? "divslide" : ""}`}>View all projects</Button>)}</Col> */}
+
+          <Col ref={myProj3}
+          md={12}
+          className=" d-flex text-center justify-content-center align-items-center"
+        >
+          {show ? (
+            <Link to="/#projects" className={`pt-5 buttonpadding `}>
+              <Button
+                onClick={() => setShow(false)}
+                className={` badge-icon montserrat mt-2 d-flex text-center justify-content-center align-items-center `}
+              >
+                Show less
+              </Button>
+            </Link>
+          ) : (
+            <Link to="/#projects" className={`pt-5 buttonpadding `}>
+            <Button
+              onClick={() => {
+                setShow(true);
+                window.scrollBy(0, 200);
+              }}
+              className={` badge-icon montserrat more-projects d-flex text-center justify-content-center align-items-center`}
+            >
+              View all projects
+            </Button>
+            </Link>
+          )}
+        </Col>
    
     </div>
   </Container>

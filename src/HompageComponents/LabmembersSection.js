@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import { FaArrowCircleRight } from "@react-icons/all-files/fa/FaArrowCircleRight";
 import { useInView } from "react-intersection-observer";
 import LazyLoad from "react-lazyload";
 import { HashLink as Link } from "react-router-hash-link";
@@ -250,7 +249,7 @@ function LabmembersSection({ scrollPosition }) {
             <Link to="/#labmembers" className={`pt-5 buttonpadding `}>
               <Button
                 onClick={() => setShow(false)}
-                className={` badge-icon montserrat badge-icon montserrat mt-2 d-flex  text-center justify-content-center align-items-center `}
+                className={` badge-icon montserrat mt-2 d-flex text-center justify-content-center align-items-center `}
               >
                 Show less
               </Button>
@@ -262,7 +261,7 @@ function LabmembersSection({ scrollPosition }) {
                 setShow(true);
                 window.scrollBy(0, 200);
               }}
-              className={` badge-icon montserrat more-projects d-flex  text-center justify-content-center align-items-center`}
+              className={` badge-icon montserrat more-projects d-flex text-center justify-content-center align-items-center`}
             >
               View all lab members
             </Button>
@@ -282,7 +281,7 @@ function LabmembersSection({ scrollPosition }) {
               } `}
               ref={myLab4}
             >
-              View Alumni <FaArrowCircleRight className="arrow-icon" />
+              View the alumni page
             </Button>
           </Link>
         </Col>

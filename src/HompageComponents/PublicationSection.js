@@ -151,7 +151,7 @@ function PublicationSection() {
             <span onClick={slideToPrevItem}><GrPrevious size={"2rem"} className="car-icons" /></span>
             <span onClick={slideToNextItem}><GrNext size={"2rem"} className="car-icons" /></span></div>
           <div className="p-2 d-flex justify-content-center">
-            <Link to={"/publicationlist"} className="buttonpadding"><Button className=" montserrat carouselbutton">VIEW ALL PUBLICATIONS</Button>
+            <Link to={"/publicationlist"} className="buttonpadding"><Button className="montserrat carouselbutton">VIEW ALL PUBLICATIONS</Button>
             </Link>
           </div>
         </div>
