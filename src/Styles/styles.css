@@ -752,9 +752,7 @@ td {
    }
 }
 
-.member-photo-overlay {
-   position: absolute;
-}
+
 
 .member-text-overlay {
    position: absolute;
@@ -797,7 +795,7 @@ td {
    overflow: hidden;
    border-radius: 5%;
    margin: 10px;
-
+   transition: 0.2s;
 }
 
 .member-photo {
@@ -827,6 +825,10 @@ td {
    .photo-link:hover .member-photo {
       transform: scale(1.1);
       filter: grayscale(0);
+   }
+   .photo-link:hover .members {
+      outline: 3px solid var(--Dark3);
+      outline-offset: 7px;
    }
 }
 
