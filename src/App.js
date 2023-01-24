@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from "./Components/auth";
 import Home from "./Home";
 import Dashboard from "./Dashboard";
@@ -37,24 +37,15 @@ ReactGA.initialize(TRACKING_ID);
 
 
 function App() {
+    const helmetContext = {};
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, []);
     return (
         <AuthProvider>
+             <HelmetProvider context={helmetContext}>
             <BrowserRouter>
                 <ScrollToTop />
-                <Helmet>
-      <title>sGlobe Research Lab</title>
-      <meta
-        name="description"
-    content="Get stats about every music from every movie"
-      />
-      <meta
-        name="keywords"
-        content="sglobe,sglobelab,Microclimate,Ecology,Biodiversity "
-      />
-    </Helmet>
                 <Routes>
                     <Route element={<Layout />}>
                         <Route path='/' element={<Home />} />
@@ -87,6 +78,7 @@ function App() {
 
                 </Routes>
             </BrowserRouter>
+            </HelmetProvider>
         </AuthProvider>
     )
 }
