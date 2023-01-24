@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { AuthProvider } from "./Components/auth";
 import Home from "./Home";
 import Dashboard from "./Dashboard";
@@ -43,6 +44,17 @@ function App() {
         <AuthProvider>
             <BrowserRouter>
                 <ScrollToTop />
+                <Helmet>
+      <title>sGlobe Research Lab</title>
+      <meta
+        name="description"
+    content="Get stats about every music from every movie"
+      />
+      <meta
+        name="keywords"
+        content="sGlobe,Microclimate,Ecology,Biodiversity "
+      />
+    </Helmet>
                 <Routes>
                     <Route element={<Layout />}>
                         <Route path='/' element={<Home />} />
