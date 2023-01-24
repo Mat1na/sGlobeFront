@@ -1562,6 +1562,10 @@ figcaption {
    font-size: 1rem;
 }
 
+/* #contact {
+   margin-bottom: 80px;
+} */
+
 @media screen and (max-width:600px) {
    .contact-text {
       font-size: 0.7rem;
@@ -1570,8 +1574,8 @@ figcaption {
 
 /* Footer */
 .footer-bg {
-   background-color: var(--Dark);
-   padding: 2rem;
+   /* background-color: var(--Dark); */
+   /* padding: 2rem; */
    color: var(--Light2);
    width: 100%;
    height: auto;
@@ -1600,7 +1604,7 @@ figcaption {
 }
 
 .footer-copyright {
-   border-top: 1px solid var(--Light2);
+   /* border-top: 1px solid var(--Light2); */
    padding-top: 0.8rem;
 }
 
@@ -1617,6 +1621,29 @@ figcaption {
 .footer-icons:hover {
    border: 2px solid var(--Light);
 }
+
+#topcontainer {
+   position: relative
+}
+
+#tsparticles {
+   height: 380px;
+   overflow: hidden;
+}
+
+#tsparticlescontainer {
+   position: absolute;
+   overflow: hidden;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   padding: 0;
+   margin: 0;
+   z-index: -1; /* if you use -1 you have to set to `"window"` the interactivity.detectsOn property */
+}
+
+
 
 .details {
    min-height: 75vh;

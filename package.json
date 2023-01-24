@@ -22,6 +22,8 @@
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
     "react-spring-carousel": "^2.0.19",
+    "react-tsparticles": "^2.8.0",
+    "tsparticles": "^2.8.0",
     "web-vitals": "^2.1.4"
   },
   "overrides": {
