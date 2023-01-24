@@ -22,7 +22,7 @@ function Home() {
         />
         <meta
           name="keywords"
-          content="sGlobe, Biodiversity, Research Lab,sGlobelab, Van Meerbeek,Climate change, Ecosystem,KU Leuven"
+          content="sGlobe, Biodiversity, Research Lab,sGlobelab, Van Meerbeek,Climate change, Ecosystem, KU Leuven, Microclimate"
         />
       </Helmet>
       <BackToTopButton />
