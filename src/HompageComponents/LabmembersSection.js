@@ -249,7 +249,9 @@ function LabmembersSection({ scrollPosition }) {
             <Link to="/#labmembers" className={`pt-5 buttonpadding `}>
               <Button
                 onClick={() => setShow(false)}
-                className={` badge-icon montserrat mt-2 d-flex text-center justify-content-center align-items-center `}
+                className={`${
+                  myLab4IsVisible ? "divslide" : ""
+                } badge-icon montserrat mt-2 d-flex text-center justify-content-center align-items-center `}
               >
                 Show less
               </Button>
@@ -261,7 +263,9 @@ function LabmembersSection({ scrollPosition }) {
                 setShow(true);
                 window.scrollBy(0, 200);
               }}
-              className={` badge-icon montserrat more-projects d-flex text-center justify-content-center align-items-center`}
+              className={`${
+                myLab4IsVisible ? "divslide" : ""
+              } badge-icon montserrat more-projects d-flex text-center justify-content-center align-items-center`}
             >
               View all lab members
             </Button>

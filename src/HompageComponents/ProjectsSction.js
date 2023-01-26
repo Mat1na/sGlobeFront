@@ -114,7 +114,7 @@ function ProjectsSction() {
             <Link to="/#projects" className={`pt-5 buttonpadding `}>
               <Button
                 onClick={() => setShow(false)}
-                className={` badge-icon montserrat mt-2 d-flex text-center justify-content-center align-items-center `}
+                className={`badge-icon montserrat mt-2 d-flex text-center justify-content-center align-items-center ${myProj3IsVisible ? "divslide" : ""}`}
               >
                 Show less
               </Button>
@@ -126,7 +126,7 @@ function ProjectsSction() {
                 setShow(true);
                 window.scrollBy(0, 200);
               }}
-              className={` badge-icon montserrat more-projects d-flex text-center justify-content-center align-items-center`}
+              className={`badge-icon montserrat more-projects d-flex text-center justify-content-center align-items-center ${myProj3IsVisible ? "divslide" : ""}`}
             >
               View all projects
             </Button>
