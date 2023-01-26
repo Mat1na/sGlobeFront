@@ -800,7 +800,7 @@ td {
 .photo-link .members{
    transition:0.3s;
    transition-timing-function:ease-out; 
-   outline: 3px solid var(--Dark3);
+   outline: 3px solid rgba(255, 255, 255, 0);
    outline-offset: -7px;
    }
 
