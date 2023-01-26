@@ -1012,6 +1012,19 @@ td {
    height: 30px;
    transition: 0.8s;
 }
+.badge-icon:hover {
+   background: none;
+}
+.badge-icon:focus {
+   background-color: inherit ;
+
+}
+.badge-icon2:hover {
+   background: none;
+}
+.badge-icon2:focus {
+   background-color: inherit ;
+}
 
 
 
