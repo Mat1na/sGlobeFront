@@ -1014,16 +1014,27 @@ td {
 }
 .badge-icon:hover {
    background: none;
+   border: 2px solid;
+   font: inherit;
+   color: var(--Dark4);
 }
 .badge-icon:focus {
    background-color: inherit ;
-
+   border-color: var(--Dark4);
+   color: #fff;
+   box-shadow: inset 40rem 0 0 0 var(--Dark4)
 }
 .badge-icon2:hover {
    background: none;
+   border: 2px solid;
+   font: inherit;
+   color: var(--Dark4);
 }
 .badge-icon2:focus {
    background-color: inherit ;
+   border-color: var(--Dark4);
+   color: #fff;
+   box-shadow: inset 40rem 0 0 0 var(--Dark4)
 }
 
 
