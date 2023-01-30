@@ -797,12 +797,12 @@ td {
    margin: 10px;
 }
 
-.photo-link .members{
+/* .photo-link .members{
    transition:0.3s;
    transition-timing-function:ease-out; 
    outline: 3px solid rgba(255, 255, 255, 0);
    outline-offset: -7px;
-   }
+   } */
 
 .member-photo {
    width: 200px;
@@ -832,10 +832,10 @@ td {
       transform: scale(1.1);
       filter: grayscale(0);
    }
-   .photo-link:hover .members {
+   /* .photo-link:hover .members {
       outline: 3px solid var(--Dark3);
       outline-offset: 7px;
-   }
+   } */
 }
 
 /* For detail page */
