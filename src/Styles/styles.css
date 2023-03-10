@@ -597,6 +597,10 @@ td {
       font-size: 1.5rem !important;
    }
 
+   .project-link{
+      font-size: 1.5rem !important;
+   }
+
    .publicationlisttext {
       font-size: 1.5rem !important;
    }
@@ -930,6 +934,16 @@ td {
    font-size: 0.9rem;
    font-weight: 300;
    line-height: 1.6;
+}
+
+.project-link {
+   color: var(--Light);
+   font-size: 0.9rem;
+   overflow-wrap: break-word;
+}
+
+.project-link:hover {
+   color: var(--Dark3);
 }
 
 .project-labmember {

@@ -111,7 +111,7 @@ function LabmemberDetails() {
               )}
               {member.email !== undefined && member.email !== "" ? (
                 <a
-                  href={`mailto:${member.membername}`}
+                  href={`mailto:${member.email}`}
                   className="d-inline p-2"
                   target="_blank"
                   rel="noreferrer"

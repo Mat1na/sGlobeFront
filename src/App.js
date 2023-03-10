@@ -30,6 +30,8 @@ import LayoutmodifiedFooter from './Components/LayoutmodifiedFooter';
 import ReactGA from 'react-ga';
 import ScrollToTop from './Components/scrollToTop';
 import NotFound from './Pages/NotFound';
+import Loggers from './Pages/Loggers';
+import Cooltree from './Pages/Cooltree';
 const TRACKING_ID = "UA-250494226-1";
 ReactGA.initialize(TRACKING_ID);
 
@@ -57,6 +59,8 @@ function App() {
                         <Route path='/project/:proj' element={<ProjectDetails />} />
                         <Route path='/alumni' element={<Alumni />} />
                         <Route path='*' element={<NotFound />} />
+                        <Route path='/loggers' element={<Loggers />} />
+                        <Route path='/cooltree' element={<Cooltree />} />
                     </Route>
                     <Route element={<LayoutmodifiedFooter />}>
                         {/* Dashboard */}
