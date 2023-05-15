@@ -1523,6 +1523,24 @@ figcaption {
 
 }
 
+.join-title3 {
+   margin-bottom: 15px;
+}
+
+.join-title4:after {
+   content: "";
+   display: block;
+   width: 14.5rem;
+   max-width: 90%;
+   border-bottom: 3px solid var(--Dark3);
+   margin: 0.5rem 0 1rem 0;
+
+}
+
+.join-title4 {
+   margin-bottom: 15px;
+}
+
 @media screen and (min-width:1440px) {
    .join-title1:after {
       width: 31rem;
@@ -1536,6 +1554,10 @@ figcaption {
 
    .join-title3:after {
       width: 25rem;
+   }
+
+   .join-title4:after {
+      width: 16.5rem;
    }
 
 }
@@ -1555,6 +1577,10 @@ figcaption {
       width: 37rem;
    }
 
+   .join-title4:after {
+      width: 20rem;
+   }
+
 }
 
 @media screen and (max-width:430px) {
@@ -1572,11 +1598,11 @@ figcaption {
       width: 28rem;
    }
 
+   .join-title4:after {
+      width: 13rem;
+   }
 }
 
-.join-title3 {
-   margin-bottom: 15px;
-}
 
 .join-section-title {
    overflow: hidden;
