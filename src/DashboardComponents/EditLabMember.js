@@ -120,7 +120,7 @@ function EditLabMember() {
       },
       body: JSON.stringify(input),
     })
-      alert("Lab member has been updated in the system!");
+    alert("Lab member has been updated in the system!");
     ;
 
 
@@ -142,7 +142,7 @@ function EditLabMember() {
   return (
     <>
       <Container className="pb-4"  >
-      <h1 className="dashboardmargin">Edit lab member</h1>
+        <h1 className="dashboardmargin">Edit lab member</h1>
         <Link to={"/labmembers"} className="btn btn-danger mr-2 mb-2">
           Go back
         </Link>
@@ -186,46 +186,46 @@ function EditLabMember() {
             />
           </Form.Group>
 
- 
-         
-          
-            {intrstArray.map((x, i) => {
-              return (
-                <Row className="box" key={x._id}>
-                  <Col md={10} className="">
-                    <Form.Group className="mb-3">
+
+
+
+          {intrstArray.map((x, i) => {
+            return (
+              <Row className="box" key={x._id}>
+                <Col md={10} className="">
+                  <Form.Group className="mb-3">
                     <Form.Label>{`Interest No.${i + 1} `}</Form.Label>
-                      <Form.Control
-                        placeholder={`Enter interest No.${i + 1} `}
-                        name="interest"
-                        onChange={(e) => handleChangeIntrst(e, i)}
-                        defaultValue={x.interest}
-                        ref={(el) => (myRefs.current[i] = el)}
-                        required
-                      />
-                    </Form.Group>
-                  </Col>
-                  <Col md={2} className="btn-box">
-                    <Form.Label className="hidden-label ">Button</Form.Label>
-                    {intrstArray.length !== 1 && (
-                      <Button
-                        variant="danger"
-                        className="mx-2 mb-2"
-                        onClick={() => handleRemoveClick(i)}
-                      >
-                        <RiDeleteBin6Fill />
-                      </Button>
-                    )}
-                    {intrstArray.length - 1 === i && (
-                      <Button className="mx-2 mb-2" onClick={handleAddClick}>
-                        <CgPlayListAdd />
-                      </Button>
-                    )}
-                  </Col>
-                </Row>
-              );
-            })}
-        
+                    <Form.Control
+                      placeholder={`Enter interest No.${i + 1} `}
+                      name="interest"
+                      onChange={(e) => handleChangeIntrst(e, i)}
+                      defaultValue={x.interest}
+                      ref={(el) => (myRefs.current[i] = el)}
+                      required
+                    />
+                  </Form.Group>
+                </Col>
+                <Col md={2} className="btn-box">
+                  <Form.Label className="hidden-label ">Button</Form.Label>
+                  {intrstArray.length !== 1 && (
+                    <Button
+                      variant="danger"
+                      className="mx-2 mb-2"
+                      onClick={() => handleRemoveClick(i)}
+                    >
+                      <RiDeleteBin6Fill />
+                    </Button>
+                  )}
+                  {intrstArray.length - 1 === i && (
+                    <Button className="mx-2 mb-2" onClick={handleAddClick}>
+                      <CgPlayListAdd />
+                    </Button>
+                  )}
+                </Col>
+              </Row>
+            );
+          })}
+
 
           <Form.Group className="mb-3">
             <Form.Label>Link Google Scholar</Form.Label>
@@ -266,7 +266,6 @@ function EditLabMember() {
           <Form.Group className="mb-3">
             <Form.Label>Email address</Form.Label>
             <Form.Control
-              type="email"
               name="email"
               onChange={handleChange}
               defaultValue={labmember.email}

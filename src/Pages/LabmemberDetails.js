@@ -24,8 +24,9 @@ function LabmemberDetails() {
           item.membername.toLowerCase().split(" ").toString() === labmeberParam
       );
       setMember(filtereddata);
-      if (filtereddata !==undefined){
-      setInterestList(filtereddata.interests)}
+      if (filtereddata !== undefined) {
+        setInterestList(filtereddata.interests)
+      }
     }
   };
   useEffect(() => {
@@ -38,16 +39,16 @@ function LabmemberDetails() {
       <Container fluid className='details'>
         <div className="member-container">
           {member !== undefined && <div className="member-details pt-5">
-          {member.currentmember === "Yes"? (
-                  <img
-                  src={`${member.image}`}
-                  className="member-details"
-                  alt={member.membername}
-                />
-              ) : ("")}
-       
+            {member.currentmember === "Yes" ? (
+              <img
+                src={`${member.image}`}
+                className="member-details"
+                alt={member.membername}
+              />
+            ) : ("")}
+
           </div>}
-          {member !== undefined &&<div className="d-block text-center">
+          {member !== undefined && <div className="d-block text-center">
             <h1 className="pt-3 montserrat">{member.membername}</h1>
             <p className="roboto mb-0 function-details">{member.functionbasic}</p>
             <p className="roboto function-details">{member.functionextra}</p>
@@ -111,7 +112,7 @@ function LabmemberDetails() {
               )}
               {member.email !== undefined && member.email !== "" ? (
                 <a
-                  href={`mailto:${member.email}`}
+                  href={member.email}
                   className="d-inline p-2"
                   target="_blank"
                   rel="noreferrer"

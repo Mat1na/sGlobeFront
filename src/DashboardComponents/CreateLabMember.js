@@ -122,10 +122,10 @@ function CreateLabMembers() {
   return (
     <>
       <Container className="pb-4"  >
-      <h1 className="dashboardmargin">Create new lab member</h1>
+        <h1 className="dashboardmargin">Create new lab member</h1>
         <Link to={"/labmembers"} className="btn btn-danger mr-2 mb-2">
-            Go back
-          </Link>
+          Go back
+        </Link>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>Name</Form.Label>
@@ -240,7 +240,6 @@ function CreateLabMembers() {
           <Form.Group className="mb-3">
             <Form.Label>Email address</Form.Label>
             <Form.Control
-              type="email"
               name="email"
               onChange={handleChange}
               value={input.email}
