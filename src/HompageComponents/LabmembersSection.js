@@ -28,7 +28,7 @@ function LabmembersSection({ scrollPosition }) {
   const [labmemberList, setLabmemberList] = useState([]);
   const fetchLabmembers = async () => {
     var sortOrder = [
-      "Assistant Professor",
+      "Associate Professor",
       "Postdoc",
       "PhD student",
       "visiting PhD student",
@@ -90,7 +90,7 @@ function LabmembersSection({ scrollPosition }) {
         {/* Principal Investigator Section*/}
         {labmemberList.map((member, index) => {
           return member.currentmember === "Yes" &&
-            member.functionbasic === "Assistant Professor" ? (
+            member.functionbasic === "Associate Professor" ? (
             // Grid system with shifting number of elements
             <Col
               md={5}
@@ -144,7 +144,7 @@ function LabmembersSection({ scrollPosition }) {
         ></h2>
         {labmemberList.map((member, index) => {
           return member.currentmember === "Yes" &&
-            member.functionbasic !== "Assistant Professor" ? (
+            member.functionbasic !== "Associate Professor" ? (
             // Grid system with shifting number of elements
             <Col
               xs={8}
@@ -191,7 +191,7 @@ function LabmembersSection({ scrollPosition }) {
         })}
         {membersExtra.map((member, index) => {
           return member.currentmember === "Yes" &&
-            member.functionbasic !== "Assistant Professor" ? (
+            member.functionbasic !== "Associate Professor" ? (
             // Grid system with shifting number of elements
             show === true ? (
               <Col
