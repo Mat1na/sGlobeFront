@@ -15,7 +15,9 @@ function PublicationList() {
   const {ref:myRef10, inView:myRef1IsVisible10}=useInView({ triggerOnce: true })
   const {ref:myRef11, inView:myRef1IsVisible11}=useInView({ triggerOnce: true })
   const {ref:myRef12, inView:myRef1IsVisible12}=useInView({ triggerOnce: true })
+  const {ref:myRef13, inView:myRef1IsVisible13}=useInView({ triggerOnce: true })
 
+  const [publication2025, setPublication2025] = useState([]);
   const [publication2024, setPublication2024] = useState([]);
   const [publication2023, setPublication2023] = useState([]);
   const [publication2022, setPublication2022] = useState([]);
@@ -36,6 +38,11 @@ function PublicationList() {
     let data = await res.json();
     if (res.ok) {
 
+      const data2025 = data.filter(obj => {
+        return obj.year === "2025";
+      });
+      setPublication2025(data2025.reverse())
+      
       const data2024 = data.filter(obj => {
         return obj.year === "2024";
       });
@@ -118,7 +125,30 @@ function PublicationList() {
     <Container fluid className='details-pub-list'>
       <h1 className='montserrat publicationdetailtitle'>Peer reviewed publications</h1>
       <p className='roboto publicationlisttext'>Researchers from the sGlobe lab are indicated in bold</p>
-      {publication2024.length > 0 && <div className={`${myRef1IsVisible1? "divMove4":""}`} ref={myRef1}>
+      {publication2025.length > 0 && <div className={`${myRef1IsVisible1? "divMove4":""}`} ref={myRef1}>
+        <b className='publicationyear montserrat'>2025</b>
+        <ul className='publicationlisttext roboto'>
+          {publication2025.map((item, index) => {
+            return <li key={item.id} className='pb-1 publicationlistarticle'>{publication2025[index].order} - {publication2025[index].authors.map((author, index, array) => {
+              if (index + 1 === array.length) {
+                if (authorList.includes(author['author'])) {
+                  return <p key={author.id} className='authorsforpublicationlist fw-bold'>{author['author']} </p>
+                } else { return <p key={author.id} className='authorsforpublicationlist'>{author['author']} </p> }
+              }
+              else {
+                if (authorList.includes(author['author'])) {
+                  return <p key={author.id} className='authorsforpublicationlist fw-bold'>{author['author']}, </p>
+                }
+                else {
+                  return <p key={author.id} className='authorsforpublicationlist'>{author['author']}, </p>
+                }
+              }
+            })}
+              {publication2025[index].publicationtitle} {publication2025[index].journal}, {publication2025[index].issue} [<a href={publication2025[index].link} target="_blank" rel="noreferrer" className='publication-link'>Link</a>]</li>
+          })}
+        </ul>
+      </div>}
+      {publication2024.length > 0 && <div className={`${myRef1IsVisible2? "divMove4":""}`} ref={myRef2}>
         <b className='publicationyear montserrat'>2024</b>
         <ul className='publicationlisttext roboto'>
           {publication2024.map((item, index) => {
@@ -141,7 +171,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2023.length > 0 && <div className={`${myRef1IsVisible2? "divMove4":""}`} ref={myRef2}>
+      {publication2023.length > 0 && <div className={`${myRef1IsVisible3? "divMove4":""}`} ref={myRef3}>
         <b className='publicationyear montserrat'>2023</b>
         <ul className='publicationlisttext roboto'>
           {publication2023.map((item, index) => {
@@ -164,7 +194,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2022.length > 0 && <div className={`${myRef1IsVisible3? "divMove4":""}`} ref={myRef3}>
+      {publication2022.length > 0 && <div className={`${myRef1IsVisible4? "divMove4":""}`} ref={myRef4}>
         <b className='publicationyear montserrat'>2022</b>
         <ul className='publicationlisttext roboto'>
           {publication2022.map((item, index) => {
@@ -187,7 +217,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2021.length > 0 && <div className={`${myRef1IsVisible4? "divMove4":""}`} ref={myRef4}>
+      {publication2021.length > 0 && <div className={`${myRef1IsVisible5? "divMove4":""}`} ref={myRef5}>
         <b className='publicationyear montserrat'>2021</b>
         <ul className='publicationlisttext roboto'>
           {publication2021.map((item, index) => {
@@ -210,7 +240,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2020.length > 0 && <div className={`${myRef1IsVisible5? "divMove4":""}`} ref={myRef5}>
+      {publication2020.length > 0 && <div className={`${myRef1IsVisible6? "divMove4":""}`} ref={myRef6}>
         <b className='publicationyear montserrat'>2020</b>
         <ul className='publicationlisttext roboto'>
           {publication2020.map((item, index) => {
@@ -233,7 +263,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2019.length > 0 && <div className={`${myRef1IsVisible6? "divMove4":""}`} ref={myRef6}>
+      {publication2019.length > 0 && <div className={`${myRef1IsVisible7? "divMove4":""}`} ref={myRef7}>
         <b className='publicationyear montserrat'>2019</b>
         <ul className='publicationlisttext roboto'>
           {publication2019.map((item, index) => {
@@ -256,7 +286,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2018.length > 0 && <div className={`${myRef1IsVisible7? "divMove4":""}`} ref={myRef7}>
+      {publication2018.length > 0 && <div className={`${myRef1IsVisible8? "divMove4":""}`} ref={myRef8}>
         <b className='publicationyear montserrat'>2018</b>
         <ul className='publicationlisttext roboto'>
           {publication2018.map((item, index) => {
@@ -279,7 +309,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2017.length > 0 && <div className={`${myRef1IsVisible8? "divMove4":""}`} ref={myRef8}>
+      {publication2017.length > 0 && <div className={`${myRef1IsVisible9? "divMove4":""}`} ref={myRef9}>
         <b className='publicationyear montserrat'>2017</b>
         <ul className='publicationlisttext roboto'>
           {publication2017.map((item, index) => {
@@ -302,7 +332,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2016.length > 0 && <div className={`${myRef1IsVisible9? "divMove4":""}`} ref={myRef9}>
+      {publication2016.length > 0 && <div className={`${myRef1IsVisible10? "divMove4":""}`} ref={myRef10}>
         <b className='publicationyear montserrat'>2016</b>
         <ul className='publicationlisttext roboto'>
           {publication2016.map((item, index) => {
@@ -325,7 +355,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2015.length > 0 && <div className={`${myRef1IsVisible10? "divMove4":""}`} ref={myRef10}>
+      {publication2015.length > 0 && <div className={`${myRef1IsVisible11? "divMove4":""}`} ref={myRef11}>
         <b className='publicationyear montserrat'>2015</b>
         <ul className='publicationlisttext roboto'>
           {publication2015.map((item, index) => {
@@ -348,7 +378,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2014.length > 0 && <div className={`${myRef1IsVisible11? "divMove4":""}`} ref={myRef11}>
+      {publication2014.length > 0 && <div className={`${myRef1IsVisible12? "divMove4":""}`} ref={myRef12}>
         <b className='publicationyear montserrat'>2014</b>
         <ul className='publicationlisttext roboto'>
           {publication2014.map((item, index) => {
@@ -371,7 +401,7 @@ function PublicationList() {
           })}
         </ul>
       </div>}
-      {publication2011.length > 0 && <div className={`${myRef1IsVisible12? "divMove4":""}`} ref={myRef12}>
+      {publication2011.length > 0 && <div className={`${myRef1IsVisible13? "divMove4":""}`} ref={myRef13}>
         <b className='publicationyear montserrat'>2011</b>
         <ul className='publicationlisttext roboto'>
           {publication2011.map((item, index) => {
